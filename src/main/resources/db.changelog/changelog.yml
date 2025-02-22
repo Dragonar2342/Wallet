@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      changes:
+        - createTable:
+            tableName: wallet
+            columns:
+              - column:
+                  name: wallet_id
+                  type: uuid
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: amount
+                  type: double
+                  constraints:
+                    nullable: false
+  - changeSet:
+      changes:
+        - insert:
+            tableName: wallet
+            columns:
+              - column:
+                  name: amount
+                  value: '1000.00'
