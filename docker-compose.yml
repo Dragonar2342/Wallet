@@ -1,0 +1,23 @@
+volumes:
+  pg_testWallet:
+
+services:
+  testWallet:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=TestWallet
+      - POSTGRES_PASSWORD=Makuta-5
+      - POSTGRES_USER=postgres
+    ports:
+      - '127.0.0.1:8081:5432'
+  app:
+    restart: always
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - testWallet
+    environment:
+      SPRING_DATASOURCE_URL: 'jdbc:postgresql://localhost:5432/TestWallet'
+      JAVA_OPTS: '-Xmx512m'

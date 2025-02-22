@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table
+      author: Zolotuhin
+      changes:
+        - createTable:
+            tableName: wallet
+            columns:
+              - column:
+                  name: id
+                  type: uuid = uuid_generated_v4()
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: balance
+                  type: double
+                  constraints:
+                    nullable: false

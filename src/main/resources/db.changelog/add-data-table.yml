@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: add-test-data
+      author: Zolotuhin
+      changes:
+        - insert:
+            tableName: wallet
+            columns:
+              - column:
+                  name: id
+                  value: 'c8ce67f5-95e0-4ceb-afad-20416cfaf908'
+              - column:
+                  name: balance
+                  value: '1000.12'
