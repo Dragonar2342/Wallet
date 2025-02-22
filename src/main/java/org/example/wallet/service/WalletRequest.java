@@ -13,12 +13,12 @@ import java.util.UUID;
 @NoArgsConstructor
 public class WalletRequest {
     @NonNull
-    @JsonProperty("id")
-    private UUID id;
+    @JsonProperty("wallet_id")
+    private UUID wallet_id;
     @NonNull
-    @JsonProperty("OperationType")
-    private OperationType OperationType;
+    @JsonProperty("operationType")
+    private OperationType operationType;
     @Positive
-    @JsonProperty("Balance")
-    private double Balance;
+    @JsonProperty("amount")
+    private double amount;
 }

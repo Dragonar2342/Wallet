@@ -31,13 +31,13 @@ public class WalletService {
         synchronized (wallet) {
             switch (operationType) {
                 case DEPOSIT: {
-                    wallet.setBalance(wallet.getBalance() + amount);
+                    wallet.setAmount(wallet.getAmount() + amount);
                     break;
                 }
                 case WITHDRAW: {
-                    if (wallet.getBalance() < amount)
+                    if (wallet.getAmount() < amount)
                         throw new CustomException("Insufficient balance");
-                    else wallet.setBalance(wallet.getBalance() - amount);
+                    else wallet.setAmount(wallet.getAmount() - amount);
                     break;
                 }
                 default: {

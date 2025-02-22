@@ -7,8 +7,8 @@ databaseChangeLog:
             tableName: wallet
             columns:
               - column:
-                  name: id
+                  name: wallet_id
                   value: 'c8ce67f5-95e0-4ceb-afad-20416cfaf908'
               - column:
-                  name: balance
+                  name: amount
                   value: '1000.12'

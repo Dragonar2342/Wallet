@@ -3,8 +3,6 @@ package org.example.wallet.controller;
 
 import jakarta.validation.Valid;
 import org.example.wallet.entity.Wallet;
-import org.example.wallet.enums.OperationType;
-import org.example.wallet.repositories.WalletRepository;
 import org.example.wallet.service.WalletRequest;
 import org.example.wallet.service.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +25,7 @@ public class WalletController {
 
     @PostMapping("/edit")
     public ResponseEntity<Wallet> performOperation(@Valid @RequestBody WalletRequest request) {
-        Wallet updatedWallet = walletService.updateWallet(request.getId(), request.getOperationType(), request.getBalance());
+        Wallet updatedWallet = walletService.updateWallet(request.getWallet_id(), request.getOperationType(), request.getAmount());
         return ResponseEntity.ok(updatedWallet);
     }
 

@@ -7,14 +7,14 @@ databaseChangeLog:
             tableName: wallet
             columns:
               - column:
-                  name: id
-                  type: uuid = uuid_generated_v4()
+                  name: wallet_id
+                  type: uuid
                   autoIncrement: false
                   constraints:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: balance
+                  name: amount
                   type: double
                   constraints:
                     nullable: false
